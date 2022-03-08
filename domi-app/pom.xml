@@ -8,6 +8,17 @@
     <artifactId>domi-app</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <dependencies>
+        <!-- https://mvnrepository.com/artifact/co.com.sofka/domain-driven-design -->
+        <dependency>
+            <groupId>co.com.sofka</groupId>
+            <artifactId>domain-driven-design</artifactId>
+            <version>1.5.0</version>
+            <type>pom</type>
+        </dependency>
+
+    </dependencies>
+
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
