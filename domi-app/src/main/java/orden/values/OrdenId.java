@@ -1,4 +1,6 @@
 package orden.values;
 
-public class OrdenId {
+import co.com.sofka.domain.generic.Identity;
+
+public class OrdenId extends Identity {
 }
