@@ -32,7 +32,9 @@ public class GenerarOrdenUseCaseTest {
         //arrange
         OrdenId ordenId = new OrdenId();
         PedidoId pedidoId = new PedidoId();
+        //PedidoId pedidoId = PedidoId.of("kkkk");
         ClienteId clienteId = ClienteId.of("xxxxxx");
+        //ClienteId clienteId = new ClienteId();
         Carrito carrito = new Carrito(CarritoId.of("xxxc001"), platillos);
 
         var command = new GenerarOrden(ordenId, pedidoId, clienteId, carrito);
@@ -48,9 +50,10 @@ public class GenerarOrdenUseCaseTest {
         var event = (OrdenGenerada)events.get(0);
         Assertions.assertEquals("orden.ordenGenerada", event.type);
         Assertions.assertEquals(ordenId.value(), event.aggregateRootId());
-        Assertions.assertEquals(clienteId.value(), event.aggregateRootId());
+        Assertions.assertEquals(pedidoId.value(), event.getPedidoId().value());
+        //Assertions.assertEquals(clienteId.value(), event.aggregateRootId());
         Assertions.assertEquals("xxxxxx", event.getClienteId().value());
-//        Assertions.assertEquals("xxxc001", event.getCarrito().identity().value());
+        Assertions.assertEquals("xxxc001", event.getCarrito().identity().value());
 
     }
 }
