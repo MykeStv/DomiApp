@@ -2,6 +2,7 @@ package orden;
 
 import cliente.values.ClienteId;
 import co.com.sofka.domain.generic.AggregateEvent;
+import events.OrdenGenerada;
 import orden.entity.Carrito;
 import orden.entity.Factura;
 import orden.entity.Repartidor;
@@ -18,9 +19,11 @@ public class Orden extends AggregateEvent<OrdenId> {
     protected Repartidor repartidor;
     protected Factura factura;
     protected Precio precio;
-    protected Carrito carritoId;
+    protected Carrito carrito;
 
-    public Orden(OrdenId ordenId) {
+    public Orden(OrdenId ordenId, PedidoId pedidoId, ClienteId clienteId, Carrito carrito) {
         super(ordenId);
+        appendChange(new OrdenGenerada(ordenId, pedidoId, clienteId, carrito)).apply();
     }
+
 }

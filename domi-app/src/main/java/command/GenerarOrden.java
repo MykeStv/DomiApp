@@ -14,12 +14,12 @@ public class GenerarOrden extends Command {
     private final ClienteId clienteId;
     private final PedidoId pedidoId;
     private final Carrito carrito;
-    private final Precio precio;
+   /* private final Precio precio;
     private final Factura factura;
-    private final Repartidor repartidor;
+    private final Repartidor repartidor;*/
 
 
-    public GenerarOrden(OrdenId ordenId, ClienteId clienteId, PedidoId pedidoId, Carrito carrito, Precio precio,
+    /*public GenerarOrden(OrdenId ordenId, ClienteId clienteId, PedidoId pedidoId, Carrito carrito, Precio precio,
             Factura factura, Repartidor repartidor) {
         this.ordenId = ordenId;
         this.clienteId = clienteId;
@@ -28,6 +28,12 @@ public class GenerarOrden extends Command {
         this.precio = precio;
         this.factura = factura;
         this.repartidor = repartidor;
+    }*/
+    public GenerarOrden(OrdenId ordenId, PedidoId pedidoId, ClienteId clienteId, Carrito carrito) {
+        this.ordenId = ordenId;
+        this.clienteId = clienteId;
+        this.pedidoId = pedidoId;
+        this.carrito = carrito;
     }
 
 
@@ -50,7 +56,7 @@ public class GenerarOrden extends Command {
         return carrito;
     }
 
-
+/*
     public Precio getPrecio() {
         return precio;
     }
@@ -63,6 +69,6 @@ public class GenerarOrden extends Command {
 
     public Repartidor getRepartidor() {
         return repartidor;
-    }
+    }*/
 
 }

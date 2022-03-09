@@ -7,4 +7,6 @@ public class PedidoId extends Identity{
     private PedidoId(String valor){
         super(valor);
     }
+
+    public PedidoId () {};
 }
