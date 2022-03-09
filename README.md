@@ -13,6 +13,6 @@ Los agregados son:
 - pedido
 - cliente
 
-**Link para visualizar el diagrama de dominio:**https://app.diagrams.net/#G1LsZHO6mfQ5r_oD46JE_onfZEzM3h5aW-
+**Link para visualizar el diagrama de dominio:** https://app.diagrams.net/#G1LsZHO6mfQ5r_oD46JE_onfZEzM3h5aW-
 
 🍁 Feliz dia
