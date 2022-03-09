@@ -1,4 +1,4 @@
-package cliente.events;
+package events;
 
 public class ServicioAlClienteSolicitado {
 }

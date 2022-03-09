@@ -1,13 +1,8 @@
 package cliente;
 
 
-import cliente.entity.values.AtencionClienteId;
-import cliente.entity.values.PQR;
-import cliente.entity.values.Telefono;
-import cliente.entity.values.Whatsapp;
-import cliente.events.PedidoAñadidoAlHistorial;
-import cliente.events.PedidoRealizado;
-import cliente.events.ServicioAlClienteSolicitado;
+import events.PedidoAñadidoAlHistorial;
+import events.PedidoRealizado;
 import cliente.values.ClienteId;
 import cliente.values.Cupones;
 import cliente.values.DatosPersonales;
@@ -19,7 +14,7 @@ import java.util.List;
 public class Cliente extends AggregateEvent<ClienteId> {
 
     protected DatosPersonales datosPersonales;
-    public Cupones cupones;
+    protected Cupones cupones;
     public List<HistorialDePedidos> pedidos;
 
     public Cliente(ClienteId entityId, HistorialDePedidos historialDePedidos) {
@@ -36,7 +31,7 @@ public class Cliente extends AggregateEvent<ClienteId> {
     }*/
 
     public void añadirPedidoHistorial(HistorialDePedidos historialDePedidos){
-        appendChange(new PedidoAñadidoAlHistorial(historialDePedidos)).apply();
+        // appendChange(new PedidoAñadidoAlHistorial(historialDePedidos)).apply();
     }
 
     public DatosPersonales datosPersonales() {

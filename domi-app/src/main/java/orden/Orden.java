@@ -1,11 +1,13 @@
 package orden;
 
+import cliente.values.ClienteId;
 import co.com.sofka.domain.generic.AggregateEvent;
 import orden.entity.Carrito;
 import orden.entity.Factura;
 import orden.entity.Repartidor;
 import orden.values.OrdenId;
 import orden.values.Precio;
+import pedido.values.PedidoId;
 
 public class Orden extends AggregateEvent<OrdenId> {
 

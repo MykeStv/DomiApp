@@ -1,4 +1,4 @@
-package cliente.events;
+package events;
 
 import cliente.values.HistorialDePedidos;
 import co.com.sofka.domain.generic.DomainEvent;
