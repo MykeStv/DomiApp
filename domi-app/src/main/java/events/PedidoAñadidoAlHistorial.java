@@ -18,7 +18,6 @@ public class PedidoAñadidoAlHistorial extends DomainEvent {
     }
 
 
-
     public HistorialDePedidos getHistorialDePedidos() {
         return historialDePedidos;
     }
