@@ -1,25 +1,31 @@
 package events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import orden.entity.Factura;
+import orden.entity.value.Direccion;
 import orden.entity.value.FacturaId;
-import orden.values.OrdenId;
+import orden.entity.value.Fecha;
 
 public class FacturaGenerada extends DomainEvent {
-    private final Factura factura;
-    //private final OrdenId ordenId;
+    private final FacturaId facturaId;
+    private final Direccion direccion;
+    private final Fecha fecha;
 
-    public FacturaGenerada(OrdenId ordenId, Factura factura) {
-        super("factura.facturaGenerada");
-        //this.ordenId = ordenId;
-        this.factura = factura;
+    public FacturaGenerada(FacturaId facturaId, Direccion direccion, Fecha fecha) {
+        super("orden.facturagenerada");
+        this.facturaId = facturaId;
+        this.direccion = direccion;
+        this.fecha = fecha;
     }
 
-    public Factura getFactura() {
-        return factura;
+    public FacturaId getFacturaId() {
+        return facturaId;
     }
 
-    /*public OrdenId getOrdenId() {
-        return ordenId;
-    }*/
+    public Direccion getDireccion() {
+        return direccion;
+    }
+
+    public Fecha getFecha() {
+        return fecha;
+    }
 }

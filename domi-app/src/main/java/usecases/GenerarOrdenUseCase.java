@@ -11,13 +11,7 @@ public class GenerarOrdenUseCase extends UseCase<RequestCommand<GenerarOrden>, R
     @Override
     public void executeUseCase(RequestCommand<GenerarOrden> input) {
         var command = input.getCommand();
-
-        var orden = new Orden(
-                command.getOrdenId(),
-                command.getPedidoId(),
-                command.getClienteId(),
-                command.getCarrito()
-        );
+        var orden = new Orden(command.getOrdenId(), command.getPrecio());
         emit().onResponse(new ResponseEvents(orden.getUncommittedChanges()));
     }
 }

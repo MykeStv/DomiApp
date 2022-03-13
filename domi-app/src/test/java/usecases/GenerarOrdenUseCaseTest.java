@@ -9,6 +9,7 @@ import orden.entity.Carrito;
 import orden.entity.value.CarritoId;
 import orden.entity.value.Platillo;
 import orden.values.OrdenId;
+import orden.values.Precio;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import pedido.values.PedidoId;
@@ -22,22 +23,10 @@ public class GenerarOrdenUseCaseTest {
 
     @Test
     void crearOrden() {
-        System.out.println("Test!");
-        List<Platillo> platillos = new ArrayList<>();
-        Platillo platillo1 = new Platillo(1L, "BandejaPaisa", "Frijoles, carnita, maduro, huevito");
-        Platillo platillo2 = new Platillo(2L, "Sancocho", "De todo");
-        platillos.add(platillo1);
-        platillos.add(platillo2);
-
         //arrange
-        OrdenId ordenId = new OrdenId();
-        PedidoId pedidoId = new PedidoId();
-        //PedidoId pedidoId = PedidoId.of("kkkk");
-        ClienteId clienteId = ClienteId.of("xxxxxx");
-        //ClienteId clienteId = new ClienteId();
-        Carrito carrito = new Carrito(CarritoId.of("xxxc001"), platillos);
-
-        var command = new GenerarOrden(ordenId, pedidoId, clienteId, carrito);
+        var ordenId = OrdenId.of("dddd");
+        var precio = new Precio(5000.0);
+        var command = new GenerarOrden(ordenId, precio);
         var usecase = new GenerarOrdenUseCase();
 
         //act
@@ -48,12 +37,9 @@ public class GenerarOrdenUseCaseTest {
 
         //assert
         var event = (OrdenGenerada)events.get(0);
-        Assertions.assertEquals("orden.ordenGenerada", event.type);
-        Assertions.assertEquals(ordenId.value(), event.aggregateRootId());
-        Assertions.assertEquals(pedidoId.value(), event.getPedidoId().value());
-        //Assertions.assertEquals(clienteId.value(), event.aggregateRootId());
-        Assertions.assertEquals("xxxxxx", event.getClienteId().value());
-        Assertions.assertEquals("xxxc001", event.getCarrito().identity().value());
+        Assertions.assertEquals("orden.ordengenerada", event.type);
+        Assertions.assertEquals("dddd", event.aggregateRootId());
+        Assertions.assertEquals(precio.value(), event.getPrecio().value());
 
     }
 }

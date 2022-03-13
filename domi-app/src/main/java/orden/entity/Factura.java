@@ -10,10 +10,10 @@ public class Factura extends Entity<FacturaId> {
     private Fecha fecha;
 
     //CONSTRUCTOR -- GenerarFactura
-    public Factura(FacturaId entityId, Direccion direccion) {
+    public Factura(FacturaId entityId, Direccion direccion, Fecha fecha) {
         super(entityId);
         this.direccion = direccion;
-        this.fecha = new Fecha(); //fecha actual
+        this.fecha = fecha;
     }
 
     //OBBJETS GETTERS
@@ -24,4 +24,5 @@ public class Factura extends Entity<FacturaId> {
     public Fecha fecha() {
         return fecha;
     }
+
 }
