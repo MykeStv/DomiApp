@@ -10,10 +10,6 @@ d
 @
 domi-app/pom.xml,f\4\f499ab60fd29c4b55b3b82183b9631c653df5272
 h
-8domi-app/src/main/java/orden/entity/value/Direccion.java,7\8\781d9fe51aefe99dd248218b1eb2f4c231244062
-c
-3domi-app/src/main/java/orden/entity/Repartidor.java,2\7\2770943b40ef46c4357b8a41b64697bbc3c1273e
-h
 8domi-app/src/main/java/orden/entity/value/FacturaId.java,d\d\dd6d5f22b8cd337dcc346fbb40b55cc92c301bda
 `
 0domi-app/src/main/java/orden/entity/Carrito.java,3\4\3476c9f4f45b029c1b8f5aa8defc1d2765835b63
@@ -28,12 +24,8 @@ _
 b
 2domi-app/src/main/java/pedido/values/PedidoId.java,4\a\4a52e58b690528dd0a39823cceafffe9c6559407
 `
-0domi-app/src/main/java/orden/values/OrdenId.java,6\8\68c1a91e8c94ec1c062b64fc98ff5cf3a1e2df6c
-`
 0domi-app/src/main/java/events/OrdenGenerada.java,d\e\deff89222099003ebe160ebebb81aaf97e59f0e7
 b
 2domi-app/src/main/java/command/GenerarFactura.java,6\6\66a06354378f1630d30278d6bd75b77fb0fdd317
 `
 0domi-app/src/main/java/command/GenerarOrden.java,4\2\42f98a7f0a3f36ad0141fe9fc0c71c6fcf51209f
-`
-0domi-app/src/main/java/orden/entity/Factura.java,1\f\1f2de2ed2e8a1e6cc8ded5f712671a0dc4e3d2a1

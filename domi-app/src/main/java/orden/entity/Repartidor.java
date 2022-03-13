@@ -5,7 +5,6 @@ import orden.entity.value.DatosPersonales;
 import orden.entity.value.RepartidorId;
 
 public class Repartidor extends Entity<RepartidorId> {
-
     private DatosPersonales datosPersonales;
 
     //CONSTRUCTOR

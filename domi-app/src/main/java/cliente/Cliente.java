@@ -1,11 +1,10 @@
 package cliente;
 
 
-import events.PedidoAñadidoAlHistorial;
 import events.PedidoRealizado;
 import cliente.values.ClienteId;
 import cliente.values.Cupones;
-import cliente.values.DatosPersonales;
+import cliente.values.DatosPersonalesCliente;
 import cliente.values.HistorialDePedidos;
 import co.com.sofka.domain.generic.AggregateEvent;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 
 public class Cliente extends AggregateEvent<ClienteId> {
 
-    protected DatosPersonales datosPersonales;
+    protected DatosPersonalesCliente datosPersonales;
     protected Cupones cupones;
     public List<HistorialDePedidos> pedidos;
 
@@ -34,7 +33,7 @@ public class Cliente extends AggregateEvent<ClienteId> {
         // appendChange(new PedidoAñadidoAlHistorial(historialDePedidos)).apply();
     }
 
-    public DatosPersonales datosPersonales() {
+    public DatosPersonalesCliente datosPersonales() {
         return datosPersonales;
     }
 

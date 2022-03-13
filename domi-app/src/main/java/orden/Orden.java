@@ -1,16 +1,16 @@
 package orden;
 
 import cliente.values.ClienteId;
+import cliente.values.DatosPersonalesCliente;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
 import events.FacturaGenerada;
 import events.OrdenGenerada;
+import events.RepartidorAsigando;
 import orden.entity.Carrito;
 import orden.entity.Factura;
 import orden.entity.Repartidor;
-import orden.entity.value.Direccion;
-import orden.entity.value.FacturaId;
-import orden.entity.value.Fecha;
+import orden.entity.value.*;
 import orden.values.OrdenId;
 import orden.values.Precio;
 import pedido.values.PedidoId;
@@ -45,6 +45,9 @@ public class Orden extends AggregateEvent<OrdenId> {
     //comportamientos
     public void generarFactura(FacturaId facturaId, Direccion direccion, Fecha fecha){
         appendChange(new FacturaGenerada(facturaId,direccion,fecha)).apply();
+    }
+    public void asignarRepartidor(RepartidorId repartidorId, DatosPersonales datosPersonales){
+        appendChange(new RepartidorAsigando(repartidorId, datosPersonales));
     }
 
     public Factura factura() {
