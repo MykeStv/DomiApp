@@ -9,9 +9,10 @@ public class Estado extends Entity<EstadoId> {
     private Entregado entregado;
     private TiempoEstimado tiempoEstimado;
 
-    public Estado(EstadoId entityId) {
+    public Estado(EstadoId entityId, TiempoEstimado tiempoEstimado) {
         super(entityId);
         this.entregado = new Entregado(Entregado.State.NO_ENTREGADO);
+        this.tiempoEstimado = tiempoEstimado;
     }
 
     public Entregado Entregado() {

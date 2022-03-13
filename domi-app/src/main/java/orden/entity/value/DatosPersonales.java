@@ -14,7 +14,6 @@ public class DatosPersonales implements ValueObject<DatosPersonales.Props> {
     public DatosPersonales(String nombre, String apellido, String celular) {
         this.nombre = Objects.requireNonNull(nombre);
         this.apellido = Objects.requireNonNull(apellido);
-        // TODO: tiene que ser igual a 10 valores
         this.celular = Objects.requireNonNull(celular);
     }
 

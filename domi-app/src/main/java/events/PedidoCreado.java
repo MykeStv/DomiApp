@@ -3,21 +3,17 @@ package events;
 import co.com.sofka.domain.generic.DomainEvent;
 import pedido.entity.values.TiempoEstimado;
 import pedido.values.PedidoId;
+import pedido.values.PreparacionesId;
 
 public class PedidoCreado extends DomainEvent{
-//    private final TiempoEstimado tiempoEstimado;
-    private final PedidoId pedidoId;
+    private final PreparacionesId preparacionId;
 
-    public PedidoCreado(PedidoId pedidoId){
-        super("pedido.pedidoCreado");
-        this.pedidoId = pedidoId;
+    public PedidoCreado(PreparacionesId preparacionId) {
+        super("pedido.pedidocreado");
+        this.preparacionId = preparacionId;
     }
 
-    public PedidoId getPedidoId() {
-        return this.pedidoId;
+    public PreparacionesId getPreparacionId() {
+        return preparacionId;
     }
-
-    /*public TiempoEstimado getTiempoEstimado() {
-        return tiempoEstimado;
-    }*/
 }
