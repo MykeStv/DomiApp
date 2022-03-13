@@ -1,36 +1,52 @@
 package cliente;
 
 
+import cliente.entity.AtencionAlCliente;
+import cliente.entity.values.AtencionClienteId;
+import cliente.entity.values.PQR;
+import cliente.entity.values.Telefono;
+import cliente.entity.values.Whatsapp;
+import co.com.sofka.domain.generic.DomainEvent;
+import events.AtencionAlClienteSolicitada;
+import events.ClienteAgregado;
 import events.PedidoRealizado;
 import cliente.values.ClienteId;
 import cliente.values.Cupones;
 import cliente.values.DatosPersonalesCliente;
 import cliente.values.HistorialDePedidos;
 import co.com.sofka.domain.generic.AggregateEvent;
+import pedido.Pedido;
+import pedido.PedidoChange;
+import pedido.values.PedidoId;
+
 import java.util.List;
 
 
 public class Cliente extends AggregateEvent<ClienteId> {
-
     protected DatosPersonalesCliente datosPersonales;
     protected Cupones cupones;
-    public List<HistorialDePedidos> pedidos;
+    protected HistorialDePedidos pedidos;
+    protected AtencionAlCliente atencionAlCliente;
 
-    public Cliente(ClienteId entityId, HistorialDePedidos historialDePedidos) {
+    public Cliente(ClienteId entityId){
         super(entityId);
-        appendChange(new PedidoRealizado(historialDePedidos)).apply();
+        subscribe(new ClienteChange(this));
     }
 
-    public void realizarPedido(HistorialDePedidos historialDePedidos){
-        appendChange(new PedidoRealizado(historialDePedidos)).apply();
+    public Cliente(ClienteId entityId, DatosPersonalesCliente datosPersonales){
+        super(entityId);
+        appendChange(new ClienteAgregado(datosPersonales)).apply();
     }
 
-    /*public void solicitarAtencionAlCLiente(AtencionClienteId entityId, Whatsapp whatsapp, Telefono telefono, PQR pqr){
-        appendChange(new ServicioAlClienteSolicitado(entityId, whatsapp, telefono, pqr)).apply();
-    }*/
+    public static Cliente from(ClienteId clienteId, List<DomainEvent> events){
+        var cliente = new Cliente(clienteId);
+        events.forEach(cliente::applyEvent);
+        return cliente;
+    }
 
-    public void añadirPedidoHistorial(HistorialDePedidos historialDePedidos){
-        // appendChange(new PedidoAñadidoAlHistorial(historialDePedidos)).apply();
+    //comportamiento
+    public void solicitarAtencionALCliente(AtencionClienteId atencionClienteId, Whatsapp whatsapp, Telefono telefono, PQR pqr){
+        appendChange(new AtencionAlClienteSolicitada(atencionClienteId, whatsapp, telefono, pqr)).apply();
     }
 
     public DatosPersonalesCliente datosPersonales() {
@@ -41,7 +57,11 @@ public class Cliente extends AggregateEvent<ClienteId> {
         return cupones;
     }
 
-    public List<HistorialDePedidos> pedidos() {
+    public HistorialDePedidos pedidos() {
         return pedidos;
+    }
+
+    public AtencionAlCliente atencionAlCliente() {
+        return atencionAlCliente;
     }
 }

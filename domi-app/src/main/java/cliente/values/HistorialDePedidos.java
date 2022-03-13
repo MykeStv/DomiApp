@@ -2,10 +2,17 @@ package cliente.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
-public class HistorialDePedidos implements ValueObject<String> {
+import java.util.List;
+
+public class HistorialDePedidos implements ValueObject<List<String>> {
+    private final List<String> historial;
+
+    public HistorialDePedidos(List<String> historial) {
+        this.historial = historial;
+    }
 
     @Override
-    public String value() {
-        return null;
+    public List<String> value() {
+        return historial;
     }
 }

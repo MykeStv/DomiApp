@@ -43,11 +43,11 @@ public class Pedido extends AggregateEvent<PedidoId>{
         appendChange(new EstadoGenerado(estadoId, tiempoEstimado)).apply();
     }
 
-    public PreparacionesId getPreparacionId() {
+    public PreparacionesId preparacionId() {
         return preparacionId;
     }
 
-    public Estado getEstado() {
+    public Estado estado() {
         return estado;
     }
 }

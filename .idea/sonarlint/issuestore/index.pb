@@ -1,16 +1,6 @@
 
-e
-5domi-app/src/main/java/cliente/entity/values/PQR.java,8\e\8e09829d95c2f44086d3874130f4c54ce8b6a956
-j
-:domi-app/src/main/java/cliente/entity/values/Telefono.java,f\7\f76756f953d10c99a94d910e7da2bc4b0e461d9d
-j
-:domi-app/src/main/java/cliente/entity/values/Whatsapp.java,9\6\961771bc10d2ad200efabb54a94493a9f9278b2f
-d
-4domi-app/src/main/java/cliente/values/ClienteId.java,0\5\055161b08aab5465636dd8a5a467dd172118e84c
 @
 domi-app/pom.xml,f\4\f499ab60fd29c4b55b3b82183b9631c653df5272
-`
-0domi-app/src/main/java/events/OrdenGenerada.java,d\e\deff89222099003ebe160ebebb81aaf97e59f0e7
 b
 2domi-app/src/main/java/command/GenerarFactura.java,6\6\66a06354378f1630d30278d6bd75b77fb0fdd317
 `
@@ -21,10 +11,6 @@ h
 8domi-app/src/main/java/usecases/GenerarOrdenUseCase.java,c\a\ca15b08d7b1be5c222bfb78872d1048de9ea8592
 l
 <domi-app/src/test/java/usecases/GenerarOrdenUseCaseTest.java,b\2\b2aa376d887689afd495d0337e757e506caa6895
-q
-Adomi-app/src/main/java/cliente/values/DatosPersonalesCliente.java,d\9\d92b75936630124495c7a66c431a08746bd59b08
-[
-+domi-app/src/main/java/cliente/Cliente.java,5\0\500fac95237bfc428f522c6e3236ce72eb5c9fef
 e
 5domi-app/src/main/java/command/AsignarRepartidor.java,4\d\4d1b613192e70f788404e217670c754106e48b12
 b
